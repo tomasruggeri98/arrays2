@@ -1,0 +1,23 @@
+
+int[] vector = new int[50];
+int suma = 0;
+int prod = 0;
+
+
+
+Console.WriteLine("ingresar 50 valores:");
+
+for (int i = 0; i < vector.Length; i++)
+{
+    vector[i] = Convert.ToInt32(Console.ReadLine());
+    suma += vector[i];
+    prod *= vector[i];
+}
+
+for (int i = vector.Length - 1; i > -1; i--)
+{
+    Console.WriteLine(vector[i]);
+}
+
+//no pude resolver como mostrar pares/impares 
+//lo entendí hablando y viendo el codigo de un compañero
