@@ -1,0 +1,70 @@
+//en una empresa los empleados cobran un sueldo según la categoria, son 50 empleados y 3 categorías
+//categoria 1 = $ 1500
+//categoria 2 = $ 2000
+//categoria 3 = $ 2500
+//Al sueldo se le suman $ 100 por cada año trabajado.
+
+//Si se ingresa el nombre, categoría y antigüedad de cada empleado, calcular
+//cuántos empleados hay por categoría
+//total de sueldos pagados por categoría
+//sueldo promedio general
+//sueldo máximo y a quién pertenece
+//qué porcentaje sobre el total de sueldos representa cada total de sueldos de las categorías
+
+int cantcategoria1 = 0;
+int cantcategoria2 = 0;
+int cantcategoria3 = 0;
+int sueldoprom = 0;
+int sueldototal = 0;
+
+
+
+object[,] empresa = new object[4,4];
+
+for (int i = 0; i < empresa.GetLength(1); i++)
+{
+    Console.WriteLine("ingresar nombre del empleado:");
+    empresa[0,i] = Console.ReadLine();
+
+    Console.WriteLine("Ingresar categora del empleado:");
+    int categoria = int.Parse(Console.ReadLine());
+    empresa[1, i] = categoria;
+
+    Console.WriteLine("ingresar antiguedad del empleado:");
+    int antiguedad = int.Parse(Console.ReadLine());
+    empresa[2, i] = antiguedad;
+
+    int sueldo = 0;
+
+    if(categoria == 1)
+    {
+        sueldo = 1500;
+        cantcategoria1++;
+    }
+    if (categoria == 2)
+    {
+        sueldo = 2500;
+        cantcategoria2++;
+    }
+    if (categoria == 3)
+    {
+        sueldo = 3500;
+        cantcategoria3++;
+    }
+   
+    empresa[3, i] = (antiguedad * 100) + sueldo; //sueldo
+    sueldototal += (int)empresa[3, i]; //sueldo total
+}
+
+
+int sueldoporcat1 = cantcategoria1 * 1500;
+int sueldoporcat2 = cantcategoria2 * 2500;
+int sueldoporcat3 = cantcategoria3 * 3500;
+
+Console.WriteLine("hay " + cantcategoria1 + " empleados en categoria 1, con un total de " + sueldoporcat1 + "pago en sueldos");
+Console.WriteLine("hay " + cantcategoria2 + " empleados en categoria 2, con un total de" + sueldoporcat2 + "pago en sueldos");
+Console.WriteLine("hay " + cantcategoria3 + " empleados en categoria 3 con un total de, " + sueldoporcat3 + "pago en sueldos");
+
+
+
+//no pude resolver el enunciado por completo
